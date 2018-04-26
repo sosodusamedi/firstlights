@@ -1,7 +1,7 @@
 {
-  "name": "mern-boilerplate",
+  "name": "firstwork",
   "version": "1.0.0",
-  "description": "MERN Boilerplate",
+  "description": "First App",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js --ignore public/",
@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sosodusamedi/mern-boilerplate.git"
+    "url": "https://github.com/sosodusamedi/firstlights.git"
   },
   "author": "Sonny Ghidizzi",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
+    "ejs": "^2.5.9",
     "express": "^4.16.3",
     "express-validator": "^5.1.2",
     "heroku": "^0.2.0",

@@ -1,4 +1,7 @@
 const express = require('express');
+const apiRouter = require('./api');
+const config = require('./config');
+const serverRender = require('./serverRender');
 const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -8,23 +11,26 @@ const User = require('./model/User');
 
 // Init App
 const server = express();
-const env = process.env;
 
 // Connect to Database
-const url = env.MONGOLAB_URI;
-//const url ='mongodb://sonny:DBTecnoom1@ds213759.mlab.com:13759/users';
+const url = config.MONGOLAB_URI;
 
 mongoose.connect(url, (err, db) => {
   if (err) {
-    console.log('Unable to connect to the mongoDB server.', err);
+    console.info('Unable to connect to the mongoDB server.', err);
   } else {
-    console.log('Connected to mongoDB, db:', db);
+    console.info('Connected to mongoDB, db:', db);
   }
 });
 
-// Home Route
-server.get('/', (req, res) => {
-  res.send('Hello Wolrd');
+// Set the View Engine
+server.set('view engine', 'ejs');
+
+
+// Home Route (with ejs)
+server.get(['/', '/users/:userId'], (req, res) => {
+  res.render('index')
+    .catch(console.error);
 });
 
 // GET Users
@@ -44,10 +50,12 @@ server.post('/api/users', (req, res) => {
   });
 });
 
+// API Middleware
+server.use('/api', apiRouter);
 
-
+// Express Middleware for static assets
 server.use(express.static('public'));
 
 // Start Server
-server.listen(env.PORT || 8080, () =>
-console.log('Express listening on port 8080...'));
+server.listen(config.port, config.host, () =>
+  console.info(`Express listening on port ${config.port}...`));

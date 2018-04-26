@@ -3,18 +3,13 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  perso: {
-    name: {
-      type: String,
-      required: true
-    },
-    tel: {
-      type: Number,
-      required: true
-    }
+  name: {
+    type: String,
+    required: true
   },
-  pratique: {
-    // TODO
+  tel: {
+    type: Number,
+    required: true
   }
 });
 

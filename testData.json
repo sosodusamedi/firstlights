@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ghita",
+      "tel": "0629"
+    },
+    {
+      "id": 2,
+      "name": "Noor",
+      "tel": "0628"
+    },
+    {
+      "id": 3,
+      "name": "Gladys",
+      "tel": "0630"
+    },
+    {
+      "id": 4,
+      "name": "Pierre",
+      "tel": "0631"
+    }
+  ]
+}
