@@ -26,11 +26,9 @@ mongoose.connect(url, (err, db) => {
 // Set the View Engine
 server.set('view engine', 'ejs');
 
-
 // Home Route (with ejs)
-server.get(['/', '/users/:userId'], (req, res) => {
-  res.render('index')
-    .catch(console.error);
+server.get('/', (req, res) => {
+  res.render('index');
 });
 
 // GET Users
@@ -49,6 +47,8 @@ server.post('/api/users', (req, res) => {
     res.json(user);
   });
 });
+
+
 
 // API Middleware
 server.use('/api', apiRouter);

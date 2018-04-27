@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 const axios = require('axios');
 
-class ProfilForm extends Component {
+class ProfileForm extends Component {
   constructor(props) {
     super(props);
     this.state ={
@@ -80,4 +80,4 @@ class ProfilForm extends Component {
 }
 
 
-export default ProfilForm;
+export default ProfileForm;

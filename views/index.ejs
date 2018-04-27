@@ -1,11 +1,8 @@
-<%- include('header') -%>
-<script>
-  winodow.initialData = <%- JSON.stringify(initialData) -%>
-</script>
-<body>
-  <div id="root">
-    <%- initialMarkup -%>
-  </div>
-  <script src="./bundle.js"></script>
-</body>
+<%- include header -%>
+
+  <body>
+    <div id="root"></div>
+
+    <script src="/bundle.js"></script>
+  </body>
 </html>

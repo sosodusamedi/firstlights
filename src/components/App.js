@@ -16,11 +16,6 @@ class App extends Component {
     // this.currentUser = this.currentUser.bind(this);
   }
 
-  componentDidMount() {
-
-  }
-
-
   // fetchUser = (userId) => {
   //   pushState(
   //     {currentUserId: userId},
