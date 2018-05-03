@@ -1,0 +1,54 @@
+// import ProfilesList from './ProfilesList';
+// import Profile from './Profile';
+// import * as api from '../api';
+//
+//
+// const pushState = (obj, url) =>
+//   window.history.pushState(obj, '', url);
+
+
+
+
+
+constructor() {
+  super();
+  // this.currentContent = this.currentContent.bind(this);
+  // this.currentUser = this.currentUser.bind(this);
+}
+
+// fetchUser = (userId) => {
+//   pushState(
+//     {currentUserId: userId},
+//     `/users/${userId}`
+//   );
+//
+//   api.fetchUser(userId).then(user => {
+//     this.setState({
+//       currentUserId: user.id,
+//       users: {
+//         ...this.state.users,
+//         [user.id]: user
+//       }
+//     });
+//   });
+// }
+//
+// currentUser() {
+//   this.state.users[this.state.currentUserId];
+// }
+//
+// currentContent() {
+//   if (this.state.currentUserId) {
+//     return <Profile {...this.currentUser()} />;
+//   }
+//
+//   return <ProfilesList
+//     onUserClick={this.fetchUser}
+//     users={this.state.users} />;
+// }
+
+
+
+{/* <div>
+  {this.currentContent}
+</div> */}

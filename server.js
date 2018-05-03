@@ -1,13 +1,12 @@
 const express = require('express');
 const apiRouter = require('./api');
 const config = require('./config');
-const serverRender = require('./serverRender');
-const parseurl = require('parseurl');
-const bodyParser = require('body-parser');
 const path = require('path');
-const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
-const User = require('./model/User');
+// const parseurl = require('parseurl');
+// const bodyParser = require('body-parser');
+// const expressValidator = require('express-validator');
+
 
 // Init App
 const server = express();
@@ -23,37 +22,22 @@ mongoose.connect(url, (err, db) => {
   }
 });
 
+
 // Set the View Engine
 server.set('view engine', 'ejs');
+server.set('views', path.join(__dirname, 'views'));
 
 // Home Route (with ejs)
 server.get('/', (req, res) => {
   res.render('index');
 });
 
-// GET Users
-server.get('/api/users', (req, res) => {
-  User.find({}).then(eachOne => {
-    res.json(eachOne);
-  });
-});
 
-// POST User
-server.post('/api/users', (req, res) => {
-  User.create({
-    name: req.body.name,
-    tel: req.body.tel
-  }).then(user => {
-    res.json(user);
-  });
-});
-
-
-
+// Put all API endpoints under '/api':
 // API Middleware
 server.use('/api', apiRouter);
 
-// Express Middleware for static assets
+// Express Middleware for serving React static files
 server.use(express.static('public'));
 
 // Start Server
