@@ -1,29 +1,9 @@
 const express = require('express');
 const router = express.Router();
+import data from '../testData.json';
 
-const data = {
-  data: [
-    {
-      'id': 1,
-      'name': 'Camille',
-      'tel': '0639'
-    }, {
-      'id': 2,
-      'name': 'Paul',
-      'tel': '0640'
-    }, {
-      'id': 3,
-      'name': 'Clément',
-      'tel': '0641'
-    }, {
-      'id': 4,
-      'name': 'Sonny',
-      'tel': '0642'
-    }
-  ]
-};
 
-// Hardcoded data
+// Hardcoded data from testData
 router.get('/users', (req, res) => {
   res.send(data);
 });
@@ -31,6 +11,7 @@ router.get('/users', (req, res) => {
 //TO DO
 
 // Data from the db
+
 // const User = require('../model/User');
 // router.get('/users', (req, res) => {
 //   User.find({}).then(eachOne => {
