@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import ProfileForm from './ProfileForm'; <ProfileForm />
+import ProfileForm from './ProfileForm';
 
 
 class App extends Component {
@@ -44,7 +44,7 @@ class App extends Component {
             }
           </ul>
         </div>
-
+        <ProfileForm />
       </div>
     );
   }

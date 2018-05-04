@@ -4,13 +4,13 @@ const axios = require('axios');
 class ProfileForm extends Component {
   constructor(props) {
     super(props);
-    this.state ={
+    this.state = {
       name: '',
       tel: ''
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTelChange = this.handleTelChange.bind(this);
-    this.handleSumbit = this.handleSumbit.bind(this);
+    this.addToProfiles = this.addToProfiles.bind(this);
   }
 
   handleNameChange(e) {
@@ -25,7 +25,7 @@ class ProfileForm extends Component {
     });
   }
 
-  addToProfiles = (e) => {
+  addToProfiles(e) {
     e.preventDefault();
     this.setState({
       name: e.target.value,
@@ -61,6 +61,7 @@ class ProfileForm extends Component {
               value={this.state.name}
               onChange={this.handleNameChange}/>
           </label>
+          <br />
           <label>Contact - Phone:
             <input
               type="number"
@@ -68,6 +69,7 @@ class ProfileForm extends Component {
               value={this.state.tel}
               onChange={this.handleTelChange} />
           </label>
+          <br />
           <button
             type="submit"
             value="submit">
