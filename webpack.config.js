@@ -10,6 +10,11 @@ module.exports = {
         test: /\.js$/,
         use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
+      },
+      {
+        test: /\.jsx$/,
+        use: ['babel-loader', 'eslint-loader'],
+        exclude: /node_modules/
       }
     ]
   }
