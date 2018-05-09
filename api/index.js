@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-import data from '../testData.json';
+const data = require('../testData.json');
 
 
 // Hardcoded data from testData
