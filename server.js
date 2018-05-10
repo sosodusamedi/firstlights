@@ -1,6 +1,6 @@
 const express = require('express');
 const apiRouter = require('./api');
-const config = require('./src/config');
+const config = require('./config');
 const path = require('path');
 const mongoose = require('mongoose');
 // const parseurl = require('parseurl');
