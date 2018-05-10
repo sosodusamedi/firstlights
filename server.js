@@ -1,6 +1,6 @@
 const express = require('express');
 const apiRouter = require('./api');
-const config = require('./config');
+import { MONGOLAB_URI, port, host, nodeEnv } from './config';
 const path = require('path');
 const mongoose = require('mongoose');
 // const parseurl = require('parseurl');
@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 const server = express();
 
 // Connect to Database
-const url = config.MONGOLAB_URI;
+const url = MONGOLAB_URI;
 
 mongoose.connect(url, (err, db) => {
   if (err) {
@@ -41,5 +41,5 @@ server.use('/api', apiRouter);
 server.use(express.static('public'));
 
 // Start Server
-server.listen(config.port, config.host, () =>
-  console.info(`Express listening on port ${config.port}...`));
+server.listen(port, host, () =>
+  console.info(`Express listening on port ${port}...`));
