@@ -53,7 +53,7 @@ class ProfileForm extends Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.addToProfiles}>
+        <form>
           <label>Full Name:
             <input
               type="text"
@@ -72,7 +72,8 @@ class ProfileForm extends Component {
           <br />
           <button
             type="submit"
-            value="submit">
+            value="submit"
+            onClick={this.addToProfiles}>
             Submit
           </button>
         </form>

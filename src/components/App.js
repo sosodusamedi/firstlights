@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import ProfileForm from './ProfileForm';
 
 
@@ -9,11 +9,10 @@ class App extends Component {
     this.state = {
       users: []
     };
-    // this.fetchUsers = this.fetchUsers.bind(this);
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/users')
+    fetch('https://firstlights.herokuapp.com/')
       .then(res =>
         this.setState({
           users: res.data.users
@@ -21,13 +20,6 @@ class App extends Component {
       )
       .catch(console.error);
   }
-
-  // fetchUsers = () => {
-  //   {this.state.users.map(user =>
-  //     <li key={user.id}>{user.name}</li>
-  //   );
-  //   }
-  // }
 
 
 
@@ -39,7 +31,12 @@ class App extends Component {
           <h1>Users</h1>
           <ul>
             {this.state.users.map(user =>
-              <li key={user.id}>{user.name}</li>
+              <li key={user.id}>
+                <ul>
+                  <li>{user.name}</li>
+                  <li>{user.tel}</li>
+                </ul>
+              </li>
             )
             }
           </ul>

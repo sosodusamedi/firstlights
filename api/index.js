@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const data = require('../testData.json');
+// const data = require('../testData.json');
 
 
 // Hardcoded data from testData
-router.get('/users', (req, res) => {
-  res.send(data);
-});
+// router.get('/users', (req, res) => {
+//   res.send(data);
+// });
 
 //TO DO
 
@@ -33,5 +33,7 @@ router.get('/users', (req, res) => {
 // router.get('/users/:userId', (req, res) => {
 //
 // });
+
+
 
 module.exports = router;
