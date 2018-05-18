@@ -12,15 +12,13 @@ const mongoose = require('mongoose');
 const server = express();
 
 // Connect to Database
-const url = MONGOLAB_URI;
+const uri = MONGOLAB_URI;
+mongoose.connect(uri);
 
-mongoose.connect(url, (err, db) => {
-  if (err) {
-    console.info('Unable to connect to the mongoDB server.', err);
-  } else {
-    console.info('Connected to mongoDB, db:', db);
-  }
-});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console,
+  'MongoDB connection error:'
+));
 
 
 // Set the View Engine

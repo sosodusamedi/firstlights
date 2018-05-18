@@ -12,12 +12,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://firstlights.herokuapp.com/')
-      .then(res =>
-        this.setState({
-          users: res.users.users
-        })
-      )
+    fetch('https://firstlights.herokuapp.com')
+      .then(res => {
+        return res.json();
+      })
+      // .then(
+      //   this.setState({
+      //     users: res.users
+      //   })
+      // )
       .catch(console.error);
   }
 

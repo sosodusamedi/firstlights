@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 const axios = require('axios');
 
+
 class ProfileForm extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ class ProfileForm extends Component {
       tel: e.target.value
     });
 
-    axios.post('https://firstlights.herokuapp.com/', {
+    axios.post('https://firstlights.herokuapp.com', {
       name: this.state.name,
       tel: this.state.tel,
     })

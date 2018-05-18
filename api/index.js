@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const parseurl = require('parseurl');
+// const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 
 
@@ -9,11 +9,10 @@ const bodyParser = require('body-parser');
 //   res.send(data);
 // });
 
-
+router.use(bodyParser.json());
+const User = require('../model/User');
 
 // Data from the db
-
-const User = require('../model/User');
 router.get('/api/users', (req, res) => {
   User.find({}).then(eachOne => {
     res.json(eachOne);
@@ -21,14 +20,14 @@ router.get('/api/users', (req, res) => {
 });
 
 // POST User
-router.post('/api/users', (req, res) => {
-  User.create({
-    name: req.body.name,
-    tel: req.body.tel
-  }).then(user => {
-    res.json(user);
-  });
-});
+// router.post('/api/users', (req, res) => {
+//   User.create({
+//     name: req.body.name,
+//     tel: req.body.tel
+//   }).then(user => {
+//     res.json(user);
+//   });
+// });
 
 
 // router.get('/users/:userId', (req, res) => {
