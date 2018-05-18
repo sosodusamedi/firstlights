@@ -13,6 +13,7 @@ const server = express();
 
 // Connect to Database
 const uri = MONGOLAB_URI;
+mongoose.Promise = global.Promise;
 mongoose.connect(uri);
 
 const db = mongoose.connection;
