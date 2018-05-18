@@ -15,7 +15,7 @@ class App extends Component {
     fetch('https://firstlights.herokuapp.com/')
       .then(res =>
         this.setState({
-          users: res.data.users
+          users: res.users.users
         })
       )
       .catch(console.error);
@@ -31,7 +31,7 @@ class App extends Component {
           <h1>Users</h1>
           <ul>
             {this.state.users.map(user =>
-              <li key={user.id}>
+              <li key={user._id}>
                 <ul>
                   <li>{user.name}</li>
                   <li>{user.tel}</li>
