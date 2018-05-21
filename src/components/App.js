@@ -11,19 +11,17 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('https://firstlights.herokuapp.com')
-      .then(res => {
-        return res.json();
-      })
-      // .then(
-      //   this.setState({
-      //     users: res.users
-      //   })
-      // )
-      .catch(console.error);
+  async componentDidMount() {
+    try {
+      const res = await fetch('https://firstlights.herokuapp.com');
+      const users = await res.json();
+      this.setState({
+        users: users.results
+      });
+    } catch(e){
+      console.info(e);
+    }
   }
-
 
 
   render() {

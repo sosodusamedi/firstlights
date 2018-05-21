@@ -3,6 +3,7 @@ const apiRouter = require('./api');
 import { MONGOLAB_URI, port, host } from './config';
 const path = require('path');
 const mongoose = require('mongoose');
+require('dotenv').config();
 // const parseurl = require('parseurl');
 // const bodyParser = require('body-parser');
 // const expressValidator = require('express-validator');
