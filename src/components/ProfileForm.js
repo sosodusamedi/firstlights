@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 const axios = require('axios');
-import { MONGOLAB_URI } from '../../config.js';
 
-const uri = MONGOLAB_URI;
 
 class ProfileForm extends Component {
   constructor(props) {
@@ -35,7 +33,7 @@ class ProfileForm extends Component {
       tel: e.target.value
     });
 
-    axios.post(uri, {
+    axios.post('https://firstlights.herokuapp.com', {
       name: this.state.name,
       tel: this.state.tel,
     })

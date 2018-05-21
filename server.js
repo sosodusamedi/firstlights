@@ -5,12 +5,16 @@ const path = require('path');
 const mongoose = require('mongoose');
 require('dotenv').config();
 // const parseurl = require('parseurl');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 // const expressValidator = require('express-validator');
 
 
 // Init App
 const server = express();
+server.use(bodyParser.urlencoded({
+  extended: true
+}));
+server.use(bodyParser.json());
 
 // Connect to Database
 const uri = MONGOLAB_URI;
