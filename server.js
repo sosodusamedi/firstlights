@@ -22,6 +22,10 @@ db.on('error', console.error.bind(console,
   'MongoDB connection error:'
 ));
 
+db.once('open', () => {
+  console.info('Connected to DB');
+});
+
 
 // Set the View Engine
 server.set('view engine', 'ejs');
